@@ -5,6 +5,7 @@ pipeline {
             steps {
                 script {
                     sh 'bash script.sh'
+                    echo ' fuck'
                 }
             }
         }
