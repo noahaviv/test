@@ -10,7 +10,7 @@ pipeline {
         }
         stage('build2') {
             steps { 
-                sh 'docker run -d -p 5000:5000 noahaviv'
+                sh 'docker run -d -p 5000:5000 --name noahaviv'
             }
         }
         stage('push') {
