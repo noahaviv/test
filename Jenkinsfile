@@ -16,6 +16,12 @@ pipeline {
         stage('push') {
             steps {
                 echo 'pushing'
+                withCredentials([usernamePassword(credentialsId: "idhaviv",
+                                                  usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh 'docker tag noahaviv noahaviv/noahaviv'
+                    sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
+                    sh 'docker push noahaviv/noahaviv'
+                }
             }
         }
     }
