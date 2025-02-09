@@ -8,7 +8,7 @@ pipeline {
                 sh 'docker build -t noahaviv .'
             }
         }
-        stage('docker run') {
+        stage('docker') {
             steps { 
                 sh 'docker run -d -p 5000:5000 --name haviv noahaviv'
             }
